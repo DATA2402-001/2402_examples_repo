@@ -21,3 +21,7 @@ print(f'length of the numbers list = {len(numbers)}')
 my_list = ['a', 'b', 'c']
 my_list.append('d')
 print(my_list)
+
+# use extend method to add multiple values to the list
+my_list.extend(['e', 'f', 'g'])
+print(my_list)
