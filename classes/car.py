@@ -12,7 +12,13 @@ class Car:
         self.model = model
         self.odometer = odo
         self.owner = owner
-
+    
+    def __repr__(self) -> str:
+        """
+        ___repr___ method defines the text representation
+        of the object
+        """
+        return f'{self.model} with {self.odometer}km'
 
 
 
@@ -28,4 +34,4 @@ fleet = [
 
 for car in fleet:
     if car.num_seats > 2:
-        print(car.model)
+        print(car)

@@ -6,6 +6,7 @@ class Character:  # convention is camel case for class names
         self.hit_points = character_hp
         self.damage = damage
 
+
 my_character = Character('eric', 5, 1)
 my_other_character = Character('Daniel', 1, 1_000_000)
 print(f'{my_character.name} has {my_character.hit_points} hp')
