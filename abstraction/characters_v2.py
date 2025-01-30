@@ -11,5 +11,7 @@ class Character(ABC):
         pass
 
     @abstractmethod
-    def __repr__() -> str:
+    def __repr__(self) -> str:
         pass
+
+
