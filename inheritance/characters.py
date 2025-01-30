@@ -24,6 +24,12 @@ class Mage(Character):
         self.spells.append(spell_name)
 
 
-gandalf = Mage('gandalf', 5, 10, 100)
+class Wizard(Mage):
 
-gandalf.save('temp.txt')
+    def __init__(self, name: str, strength: int, dexterity: int, mana: int, school: str):
+        self.school_of_magic = school
+        super().__init__(name, strength, dexterity, mana)
+    
+
+the_wizard = Wizard("wizard of oz", 5, 10, 1, "illusion")
+the_wizard.save('temp.txt')
