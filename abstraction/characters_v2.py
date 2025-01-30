@@ -53,5 +53,24 @@ class Mage(Character):
         return f'{self.name} the mage, with {self.health} health and {self.mana} mana'
 
 
-my_fighter = Fighter('eric', 10, 5)
-print(my_fighter)
+my_fighter = Fighter('eric', health=10, speed=5)
+my_mage = Mage('harry potter', health=5, mana=20)
+
+
+def mana_boost(mage: Mage, amount: int) -> None:
+    
+    if type(mage) == Mage:
+        mage.mana += amount
+    else:
+        raise TypeError('mage must be a Mage object')
+
+
+def health_boost(character, amount) -> None:
+    if isinstance(character, Character):
+        character.health += amount
+    else:
+        raise TypeError('character must be a Character subclass')
+
+print(my_mage.mana)
+mana_boost(my_fighter, 5)
+print(my_mage.mana)
