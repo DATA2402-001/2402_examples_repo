@@ -26,6 +26,12 @@ print(kermit.num_vertebrae)
 bryans_dog = Dog(False, "Happy", 51)
 print(bryans_dog.name)
 print(bryans_dog.num_vertebrae) # dog inherits this from Vertebrate
-print(bryans_dog.poisonous) # this won't work: poisonous is a Frog attribute
+# print(bryans_dog.poisonous) # this won't work: poisonous is a Frog attribute
 
 some_animal = Vertebrate(1000)
+
+# check types of objects
+print(type(kermit) == Frog)  # True
+print(type(kermit) == Vertebrate)  # False
+print(isinstance(kermit, Frog))  # True
+print(isinstance(kermit, Vertebrate)) # True (isinstance respects inheritance relationships)
