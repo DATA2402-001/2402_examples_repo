@@ -65,12 +65,16 @@ def mana_boost(mage: Mage, amount: int) -> None:
         raise TypeError('mage must be a Mage object')
 
 
-def health_boost(character, amount) -> None:
+def health_boost(character: Character, amount: int) -> None:
     if isinstance(character, Character):
         character.health += amount
     else:
         raise TypeError('character must be a Character subclass')
 
 print(my_mage.mana)
-mana_boost(my_fighter, 5)
+mana_boost(my_mage, 5)
 print(my_mage.mana)
+
+print(my_fighter.health)
+health_boost("abcde", 10)
+print(my_fighter.health)
