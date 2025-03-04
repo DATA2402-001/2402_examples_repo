@@ -35,3 +35,4 @@ fleet = [
 for car in fleet:
     if car.num_seats > 2:
         print(car)
+
