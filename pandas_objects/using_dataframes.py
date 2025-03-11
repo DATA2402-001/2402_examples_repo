@@ -43,3 +43,7 @@ df = pd.DataFrame(data)
 df['total sales'] = df['Units Sold'] * df['Price per Unit ($)']
 # reduce to rows with >10 units sold
 print(df.loc[df['Units Sold'] > 10, ['Day', 'Product', 'Units Sold']])
+
+# get the row with minimum total sales, using units_sold to break ties
+df.sort_values(['total sales', 'Units Sold'], inplace=True)
+print(df.iloc[0, :]) # get row at the top of the dataframe (can't use .loc because row index has been scrambled by the sort)
