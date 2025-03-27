@@ -36,8 +36,21 @@ ax[1, 0].set_ylabel('GDP')
 
 # histogram in the bottom-right
 random_data = np.random.normal(0, 1, 1000)
-ax[1, 1].hist(random_data)
+# add an outlier
+random_data[-20:] = 99
+# cap outliers to fit in some overflow bin
+random_data[random_data > 3] = 3
+
+bin_edges = np.linspace(-3, 3, 8)
+bin_centers = bin_edges
+ax[1, 1].hist(random_data, bins=bin_edges)
 ax[1, 1].set_title('histogram of some random data')
+# manipulate tick labels to show there's an overflow bin
+ax[1, 1].set_xticks(bin_edges)
+tick_labels = ax[1, 1].get_xticklabels()
+tick_labels[-1] = '3 or more'
+ax[1, 1].set_xticklabels(tick_labels)
+
 
 plt.tight_layout() # reposition to avoid overlapping charts
 plt.show()
