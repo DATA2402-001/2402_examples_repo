@@ -13,6 +13,12 @@ def make_pivot_table(
         columns = col_index
     )
 
+    for row_value in row_index:
+        for col_value in col_index:
+            matching_rows = (frame[index] == row_value) & (frame[column] == col_value)
+            aggregated_value = frame.loc[matching_rows, values].mean()
+            pt.loc[row_value, col_value] = aggregated_value        
+
     return pt
 
 df = pd.read_csv('./pivot_table/sample_data.csv')
