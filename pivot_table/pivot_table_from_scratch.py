@@ -23,3 +23,6 @@ def make_pivot_table(
 
 df = pd.read_csv('./pivot_table/sample_data.csv')
 print(make_pivot_table(df, 'year', 'dept', 'sales'))
+
+# get all the same info using a groupby
+print(df.groupby(['year', 'dept'])['sales'].mean())
