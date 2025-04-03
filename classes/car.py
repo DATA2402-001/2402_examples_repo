@@ -21,8 +21,6 @@ class Car:
         return f'{self.model} with {self.odometer}km'
 
 
-
-
 eric = Person('eric', 'echalmers@mtroyal.ca')
 
 
@@ -31,6 +29,7 @@ fleet = [
     Car(2, 'sports car', 'stingray', 3, eric),
     Car(10, 'van', 'large van', 1000, eric)
 ]
+
 
 for car in fleet:
     if car.num_seats > 2:
