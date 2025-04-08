@@ -23,7 +23,7 @@ joined = pd.merge(df1, df2, on=['key1', 'key2'])
 print(joined)
 
 # join where left.key1 matches right.key2 (make it a left join)
-joined = pd.merge(df1, df2, left_on='key1', right_on='key2', how='left')
+joined = pd.merge(df1, df2, left_on='key1', right_on='key2', how='left')                     
 print(joined)
 
 
